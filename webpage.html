@@ -1,0 +1,488 @@
+
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,300&display=swap" rel="stylesheet">
+<title>Page Title</title>
+<style>
+	html,body{
+		width:100%;
+		height:100%;
+		position:absolute;
+		left:0;
+		top:0;
+		margin:0;
+		padding:0;
+		font-family: 'Poppins', sans-serif;
+	}
+	#container{
+		position:absolute;
+		width:100%;
+		height:100%;
+		left:0;
+		top:0;
+		margin:0;
+		padding:0;
+		background-color:white;
+	}
+	#header{
+		width:100%;
+		height:60px;
+		background-color:#fafafa;
+	}
+	#content{
+		width:100%;
+		height:calc(100% - 60px);
+		background-color:white;
+		overflow-y:scroll;
+	}
+	
+	.no_scrollbar::-webkit-scrollbar {
+	  display: none;
+	}
+	
+	.no_scrollbar {
+	  ms-overflow-style: none; 
+	  scrollbar-width: none;  
+	}
+	#content_head{
+		width:100%;
+		height:200px;
+		background-color:#624bff;
+	}
+	#content_body{
+		width:100%;
+		height:auto;
+		margin:0;
+	}
+	#cards{
+		width:100%;
+		height:150px;
+		position:absolute;
+		top:150px;
+		display:flex;
+	}
+	.card{
+		background-color:white;
+		border-radius:8px;
+		height:100%;
+		margin-left:20px;
+		width:calc(25% - 25px);
+		box-shadow: 0px 2px 4px 0px #dbdbdb;
+		position:relative;
+	}
+	.card_icon{
+		border-radius:4px;
+		background-color:#f8d6ff;
+		padding:8px;
+		width:12px;
+		height:12px;
+		right:16px;
+		top:16px;
+		position:absolute;
+		cursor:pointer;
+		cursor:pointer;
+	}
+	.card_icon:hover{
+		background-color:#e5c0ed;
+	}
+	
+	.card_icon:active{
+		background-color:#e0c5e6;
+	}
+	.card_header{
+		color:black;
+		font-weight:bold;
+		font-size:12px;
+		margin-left:20px;
+		margin-top:20px;
+	}
+	.card_number{
+		font-weight:bold;
+		font-size:24px;
+		margin-left:20px;
+		margin-top:20px;
+	}
+	.card_completed{
+		font-size:12px;
+		color:#707070;
+		margin-left:20px;
+		position:absolute;
+		bottom:20px;
+		
+	}
+	#projects{
+		font-size:20px;
+		font-weight:bold;
+		position:absolute;
+		margin-left:20px;
+		margin-top:35px;
+		width:100px;
+		color:#ebf2ff;
+		}
+
+	.menu_icon{
+		border-radius:16px;
+		background-color:#e0e0e0;
+		padding:8px;
+		width:20px;
+		height:20px;
+		right:16px;
+		top:12px;
+		position:absolute;
+		
+	}
+	.notification_icon{
+		border-radius:16px;
+		background-color:#f0f0f0;
+		padding:8px;
+		width:10px;
+		height:12px;
+		right:70px;
+		top:16px;
+		position:absolute;
+		cursor:pointer;
+		}
+	.notification_icon:hover{
+		background-color:#ededed;
+	}
+	
+	.notification_icon:active{
+		background-color:#e6e6e6;
+		}
+	#new_project{
+		background-color:#f2f2f2;
+		margin-left:1100px;
+		margin-top:35px;
+		border-radius:8px;
+		width:200px;
+		height:30px;
+		font-family: 'Poppins', sans-serif;
+		font-weight:bold;
+		outline:none;
+		border:none;
+		cursor:pointer;
+		}
+	#new_project:hover{
+		background-color:#ededed;
+	}
+	
+	#new_project:active{
+		background-color:#e6e6e6;
+	}
+	.icon{
+		border-radius:16px;
+		background-color:#f7f7f7;
+		padding:8px;
+		width:8px;
+		height:8px;
+		left:10px;
+		top:20px;
+		position:absolute;	
+	}
+	.icon:hover{
+		background-color:#ededed;
+		cursor:pointer;
+	}
+	
+	.icon:active{
+		background-color:#e6e6e6;
+	}
+	.Search{
+		position:absolute;
+		width:250px;
+		left:50px;
+		top:20px;
+		border:1px solid #e5e5e5;
+		border-radius:4px;
+		outline:none;
+		font-family: 'Poppins', sans-serif
+	}
+	.Search:focus {
+	  border: 1px solid #80afba;
+	  box-shadow: 0px 0px 20px 0px #c4c4c4;
+	 }
+	::placeholder{
+		padding-left:14px;
+	}
+    #active_project{
+		margin-top:70px;
+		margin-left:20px;
+		margin-right:20px;
+		height:30px;
+		font-size:16px;
+		font-weight:bold;
+		border-radius:2px;
+		padding-left:14px;
+		box-shadow: 0px 2px 4px 0px #dbdbdb;
+	}
+	.projectname_box{
+		margin-left:20px;
+		color:#949494;
+		height:30px;
+		font-size:10px;
+		font-weight:bold;
+	
+	}
+	#projrct_name{
+		margin-left:10px;
+		margin-top:10px;
+		position:absolute;
+	}
+	#hours{
+		margin-left:500px;
+		margin-top:10px;
+		position:absolute;
+	}
+	#priority{
+		margin-left:700px;
+		margin-top:10px;
+		position:absolute;
+	}
+	#members{
+		margin-left:900px;
+		margin-top:10px;
+		position:absolute;
+	}
+	#progress{
+		margin-left:1120px;
+		margin-top:10px;
+		position:absolute
+	}
+
+	#design_system{
+		margin-left:20px;
+		margin-right:20px;
+		font-size:14px;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#f7f7f7;
+		}
+	.logo{
+		margin-left:10px;
+		margin-top:5px;
+		height:20px;
+		border-radius:4px;
+		background-color:#e0e0e0;
+		}
+	.time{
+		margin-left:470px;
+		margin-top:8px;
+		position:absolute;
+		font-size:10px;
+		color:#808080;
+	}
+	.name{
+		font-size:10px;
+		position:absolute;
+		margin-left:5px;
+		margin-top:8px;
+	}
+	.Priority1{
+		background-color:#f5dc00;
+		color:#fafaf7;
+		height:12px;
+		width:40px;
+		font-size:8px;
+		padding-left:8px;
+		position:absolute;
+		margin-left:660px;
+		margin-top:10px;
+		border-radius:4px;
+		
+		
+	}
+	#slack{
+		margin-left:20px;
+		margin-right:20px;
+		font-size:14px;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#f7f7f7;
+	}
+	#Priority2{
+		background-color:#d9252b;
+		color:#fafaf7;
+		height:12px;
+		width:25px;
+		font-size:8px;
+		padding-left:8px;
+		position:absolute;
+		margin-left:660px;
+		margin-top:10px;
+		border-radius:4px;
+	}
+	#github_satallite{
+		margin-left:20px;
+		margin-right:20px;
+		font-size:14px;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#f7f7f7;
+	}
+	.Priority3{
+		background-color:#57daf7;
+		color:#fafaf7;
+		height:12px;
+		width:25px;
+		font-size:8px;
+		padding-left:8px;
+		position:absolute;
+		margin-left:660px;
+		margin-top:10px;
+		border-radius:4px
+		}
+	#character_modelling{
+		margin-left:20px;
+		margin-right:20px;
+		font-size:14px;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#f7f7f7;
+	}
+	#webapp_system{
+		margin-left:20px;
+		margin-right:20px;
+		font-size:14px;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#f7f7f7;
+	}
+	#Priority4{
+		background-color:#065c1d;
+		color:#fafaf7;
+		height:12px;
+		width:25px;
+		font-size:8px;
+		padding-left:5px;
+		position:absolute;
+		margin-left:660px;
+		margin-top:10px;
+		border-radius:4px
+		}
+	#github_event{
+		margin-left:20px;
+		margin-right:20px;
+		font-size:14px;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#f7f7f7;
+	}
+	#view_all{
+		margin-left:20px;
+		margin-right:20px;
+		font-size:14px;
+		font-weight:bold;
+		border-style:solid;
+		border-color:#f7f7f7;
+		
+	}
+	#all_project{
+		font-size:10px;
+		margin-left:630px;
+		color:#9053e6;
+		cursor:pointer;
+	}
+
+
+
+	
+</style>
+</head>
+<body>
+
+<div id="container">
+	<div id="header">
+		<img class="icon" src="menu-svgrepo-com.svg">
+		<input class="Search" placeholder="Search"  >
+		<img class="menu_icon" src="man-svgrepo-com.svg">
+		<img class="notification_icon" src="notifications-outline-svgrepo-com.svg">
+	</div>
+	<div id="content" class="no_scrollbar">
+		<div id="content_head">
+		 <div id="projects">Projects</div>
+			<button id="new_project">Create New Project</button>	
+		</div>
+		<div id="content_body">
+			<div id="active_project">Active Project</div>
+			<div class="projectname_box">
+				<span id="projrct_name">Project Name</span>
+				<span id="hours">Hours</span>
+				<span id="priority">Priority</span>
+				<span id="members">Members</span>
+				<span id="progress">Progress</span>
+			</div>
+			<div id="design_system">
+				<img  class="logo" src="icons8-dropbox.svg">
+				<span class="name">Dropbox Design System</span>
+				<span class="time">34</span>
+				<span class="Priority1">Medium</span>	
+			</div>
+			<div id="slack">
+				<img  class="logo" src="slack-new-logo.svg">
+				<span class="name">Slack Team UI Design</span>
+				<span class="time">47</span>
+				<span id="Priority2">High</span>
+			</div>
+			<div id="github_satallite">
+				<img  class="logo" src="icons8-github.svg">
+				<span class="name">GitHub Satellite</span>
+				<span class="time">120</span>
+				<span class="Priority3">Low</span>
+			</div>
+			<div id="character_modelling">
+				<img  class="logo" src="icons8-3ds-max.svg">
+				<span class="name">3D Character Modelling</span>
+				<span class="time">89</span>
+				<span class="Priority1">Medium</span>
+			</div>
+			<div id="webapp_system">
+				<img  class="logo" src="icons8-web-scraper.svg">
+				<span class="name">Webapp Design System</span>
+				<span class="time">180</span>
+				<span id="Priority4">Track</span>
+			</div>
+				<div id="github_event">
+				<img  class="logo" src="icons8-github.svg">
+				<span class="name">GitHub Event Design</span>
+				<span class="time">120</span>
+				<span class="Priority3">Low</span>
+			</div>
+			<div id="view_all">
+				<span id="all_project">View All Projects</span>
+			</div>
+			
+		
+		<div id="cards">
+			<div class="card">
+				<img class="card_icon" src="briefcase-svgrepo-com.svg">
+				<div class="card_header">Projects</div>
+				<div class="card_number">18</div>
+				<div class="card_completed">2 completed</div>
+			</div>
+			<div class="card">
+				<img class="card_icon" src="menu-svgrepo-com.svg">
+				<div class="card_header">Active Task</div>
+				<div class="card_number">132</div>
+				<div class="card_completed">28 completed</div>
+			</div>
+			<div class="card">
+				<img class="card_icon" src="people-svgrepo-com.svg">
+				<div class="card_header">Teams</div>
+				<div class="card_number">12</div>
+				<div class="card_completed">1 completed</div>
+			</div>
+			<div class="card">
+				<img class="card_icon" src="productivity^-svgrepo-com.svg">
+				<div class="card_header">Productivity</div>
+				<div class="card_number">76%</div>
+				<div class="card_completed">5% completed</div>
+		
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
